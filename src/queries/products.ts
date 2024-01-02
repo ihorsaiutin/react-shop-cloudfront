@@ -65,3 +65,9 @@ export function useDeleteAvailableProduct() {
     })
   );
 }
+
+export function useAddAvailableProduct() {
+  return useMutation((values: AvailableProduct) =>
+    axios.post<AvailableProduct>(`${API_PATHS.bff}/products`, values)
+  );
+}
